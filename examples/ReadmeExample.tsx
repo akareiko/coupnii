@@ -10,7 +10,7 @@ const ReadmeExample = () => {
       colormap: "gray",
     },
     ventricle: {
-      url: "segmented_mri.nii",
+      url: "/segmented_mri.nii",
       opacity: 0.9,
       colormap: "warm",
     },
