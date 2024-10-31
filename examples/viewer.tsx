@@ -2,14 +2,17 @@ import { NiivueCanvas, NVROptions, NVRVolume } from "../src";
 import { useImmer } from "use-immer";
 import React from "react";
 
+const image1 = "/aligned_mri.nii";
+const image2 = "/segmented_mri.nii";
+
 const Viewer = () => {
   const [volumes, setVolumes] = useImmer<{ [key: string]: NVRVolume }>({
     brain: {
-      url: "/aligned_mri.nii",
+      url: image1,
       colormap: "gray",
     },
     ventricle: {
-      url: "/segmented_mri.nii",
+      url: image2,
       opacity: 0.9,
       colormap: "warm",
     },
