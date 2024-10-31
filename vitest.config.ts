@@ -3,7 +3,7 @@ import { configDefaults, defineConfig } from "vitest/config";
 export default defineConfig({
   root: 'examples',
   build: {
-    outDir: '../dist',
+    outDir: '../examples/dist',
     emptyOutDir: true,
   },
   test: {
