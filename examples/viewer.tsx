@@ -1,9 +1,8 @@
 import { NiivueCanvas, NVROptions, NVRVolume } from "../src";
-
 import { useImmer } from "use-immer";
 import React from "react";
 
-const ReadmeExample = () => {
+const Viewer = () => {
   const [volumes, setVolumes] = useImmer<{ [key: string]: NVRVolume }>({
     brain: {
       url: "/aligned_mri.nii",
@@ -15,6 +14,7 @@ const ReadmeExample = () => {
       colormap: "warm",
     },
   });
+
   const [options, setOptions] = useImmer<NVROptions>({
     isOrientCube: false,
   });
@@ -32,15 +32,13 @@ const ReadmeExample = () => {
   };
 
   return (
-    <>
-      <div>
-        <NiivueCanvas
-          options={options}
-          volumes={React.useMemo(() => Object.values(volumes), [volumes])}
-        />
-      </div>
-    </>
+    <div>
+      <NiivueCanvas
+        options={options}
+        volumes={React.useMemo(() => Object.values(volumes), [volumes])}
+      />
+    </div>
   );
 };
 
-export default ReadmeExample;
+export default Viewer;
